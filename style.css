@@ -1,4 +1,4 @@
-   table, th, td {
+   .table_dynamic, .th_header_dynamic {
         border: 1px solid black;
         color: blue;
         font-weight: bold;

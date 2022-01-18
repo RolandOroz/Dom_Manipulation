@@ -21,16 +21,17 @@ document.getElementsByTagName('body')[0].append(divEl);
 const createTable = () => {
 
     let tableEl = document.createElement('table');
-    tableEl.className='table_dynamic';
+    tableEl.className = 'table_dynamic';
 
     let tableHeadEl = document.createElement('thead');
     tableHeadEl.id = 'thead_dynamic';
 
     let tableRowEl = document.createElement('tr');
-    tableRowEl.className='tr_header_dynamic';
+    tableRowEl.className = 'tr_header_dynamic';
 
     tableHeadersNamesArray.forEach(item => {
          let tableHeader = document.createElement('th');
+         tableHeader.className = 'th_header_dynamic'
          tableHeader.innerText = item;
          tableRowEl.append(tableHeader);
      })
