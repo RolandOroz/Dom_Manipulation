@@ -1,3 +1,7 @@
-table, th, td {
-    border: 1px solid black;
+   table, th, td {
+        border: 1px solid black;
+        color: blue;
+        font-weight: bold;
+        padding: 5px;
+        border-collapse: collapse;
 }

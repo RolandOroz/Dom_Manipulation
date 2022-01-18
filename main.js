@@ -1,4 +1,78 @@
 
+let tableHeadersNamesArray =[];
+
+function createTableHeaderNames(arr, typeAllNamesDividedByCommaAsString) {
+    let string;
+        string = typeAllNamesDividedByCommaAsString;
+
+    let xArr =string.split(',')
+    xArr.forEach((item) => {
+        arr.push(item);
+    })
+}
+createTableHeaderNames(tableHeadersNamesArray, "First Name,Last Name,Address,DOB, ");
+
+//creating div element
+let divEl = document.createElement('div');
+divEl.id = 'div_dynamic_table';
+document.getElementsByTagName('body')[0].append(divEl);
+
+// dynamic table creation
+const createTable = () => {
+
+    let tableEl = document.createElement('table');
+    tableEl.className='table_dynamic';
+
+    let tableHeadEl = document.createElement('thead');
+    tableHeadEl.id = 'thead_dynamic';
+
+    let tableRowEl = document.createElement('tr');
+    tableRowEl.className='tr_header_dynamic';
+
+    tableHeadersNamesArray.forEach(item => {
+         let tableHeader = document.createElement('th');
+         tableHeader.innerText = item;
+         tableRowEl.append(tableHeader);
+     })
+
+    tableHeadEl.append(tableRowEl);
+    tableEl.append(tableHeadEl);
+
+    divEl.append(tableEl);
+}
+createTable()
+
+
+
+
+//**************************** ideas/ bin ***********************************
+
+// function createTableHeadRow(arrOfHeaderNames, classTh, tr) {
+//     arrOfHeaderNames.forEach((item) => {
+//     let tableHeaderEl = document.createElement('th');
+//         tableHeaderEl.className= classTh;
+//         tableHeaderEl.innerText = item;
+//         tr.append(tableHeaderEl);
+//     })
+// }
+
+// let bodyEl = document.querySelector('body');
+// let divEl = document.createElement('div');
+// let tableEl = document.createElement('table');
+// let thEl = document.createElement('th');
+// let tdEl = document.createElement('td');
+// let trEl = document.createElement('tr');
+//
+// divEl.className = 'table_container';
+// thEl.className = 'table_Header';
+//
+//
+// bodyEl.appendChild(divEl);
+// divEl.appendChild(tableEl);
+// tableEl.appendChild(thEl);
+// thEl.innerHTML='adsad'
+//
+
 
 // class userInput {
 //     constructor(id, firstName, lastName, address, dob) {
@@ -27,78 +101,6 @@
 //document.head.innerHTML('<script defer src = "main.js" >< /script>')
 
 //creating table header names in an Array
-let tableHeadersNamesArray =[];
-
-function createTableHeaderNames(arr, typeAllNamesDividedByCommaAsString) {
-    let string;
-        string = typeAllNamesDividedByCommaAsString;
-
-    let xArr =string.split(',')
-    xArr.forEach((item) => {
-        arr.push(item);
-    })
-}
-createTableHeaderNames(tableHeadersNamesArray, "First Name,Last Name,Address,DOB, ")
-console.log(tableHeadersNamesArray);
-
-
-
-let divEl = document.createElement('div');
-divEl.id = 'div_dynamic_table';
-document.getElementsByTagName('body')[0].append(divEl);
-// function createTable(idDiv, idThead) {
-const createTable = () => {
-
-
-    let tableEl = document.createElement('table');
-    tableEl.className='table_dynamic';
-
-    let tableHeadEl = document.createElement('thead');
-    tableHeadEl.id = 'thead_dynamic';
-
-    let tableRowEl = document.createElement('tr');
-    tableRowEl.className='tr_header_dynamic';
-
-    tableHeadersNamesArray.forEach(item => {
-         let tableHeader = document.createElement('th');
-         tableHeader.innerText = item;
-         tableRowEl.append(tableHeader);
-     })
-
-    tableHeadEl.append(tableRowEl);
-    tableEl.append(tableHeadEl);
-
-    divEl.append(tableEl);
-}
-createTable()
-// }
-
-// function createTableHeadRow(arrOfHeaderNames, classTh, tr) {
-//     arrOfHeaderNames.forEach((item) => {
-//     let tableHeaderEl = document.createElement('th');
-//         tableHeaderEl.className= classTh;
-//         tableHeaderEl.innerText = item;
-//         tr.append(tableHeaderEl);
-//     })
-// }
-
-// let bodyEl = document.querySelector('body');
-// let divEl = document.createElement('div');
-// let tableEl = document.createElement('table');
-// let thEl = document.createElement('th');
-// let tdEl = document.createElement('td');
-// let trEl = document.createElement('tr');
-//
-// divEl.className = 'table_container';
-// thEl.className = 'table_Header';
-//
-//
-// bodyEl.appendChild(divEl);
-// divEl.appendChild(tableEl);
-// tableEl.appendChild(thEl);
-// thEl.innerHTML='adsad'
-//
-
 
 
 
