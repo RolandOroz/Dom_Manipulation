@@ -7,13 +7,14 @@ function setUpEventTable() {
     //creating btn to append to body
     let buttonEl = document.createElement('button');
     buttonEl.id = 'add_btn_dynamic_table';
+    buttonEl.setAttribute('onclick', 'divEl_showForm()');
     buttonEl.innerText= "Add";
 
 
-    let divEl_2 = document.createElement('div');
-    divEl_2.id = 'div_btn_add';
-    document.getElementsByTagName('body')[0].append(divEl_2);
-    divEl_2.append(buttonEl);
+    let divEl_btn_add = document.createElement('div');
+    divEl_btn_add.id = 'div_btn_add';
+    document.getElementsByTagName('body')[0].append(divEl_btn_add);
+    divEl_btn_add.append(buttonEl);
 
     //creating div element to append the table
     let divEl = document.createElement('div');
@@ -21,7 +22,12 @@ function setUpEventTable() {
     document.getElementsByTagName('body')[0].append(divEl);
 
 
+    function divEl_showForm() {
+        divEl_show_form = document.createElement('div');
 
+    }
+
+    divEl_showForm.id = 'div_show_Form';
     // dynamic table creation (table header & table body)
     const createTable = () => {
 
@@ -55,13 +61,15 @@ function setUpEventTable() {
 
         //appends table to div
         divEl.append(tableEl);
+
+
     }
     createTable();
 //************************* end of dynamic table creation ************************
-
-
-
-
+    let divEl_show_form = document.createElement('div');
+    divEl_show_form.id = 'userFormWrapper';
+    divEl_show_form.innerHTML = 'hi'  //todo --------------------------------------------- TEST
+    document.getElementsByTagName('body')[0].append(divEl_show_form);
 }
 
 window.addEventListener('load', function () {

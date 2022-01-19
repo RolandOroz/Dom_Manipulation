@@ -1,13 +1,31 @@
-   .table_dynamic, .th_header_dynamic {
-        border: 1px solid black;
-        color: blue;
-        font-weight: bold;
-        padding: 5px;
-        border-collapse: collapse;
-   }
+.table_dynamic, .th_header_dynamic {
+    border: 1px solid black;
+    color: blue;
+    font-weight: bold;
+    padding: 5px;
+    border-collapse: collapse;
+}
 
-   #add_btn_dynamic_table {
-           border: 3px solid darkseagreen;
-           background-color: mediumaquamarine;
-           color: black;
-   }
+#add_btn_dynamic_table {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    border: 3px solid darkseagreen;
+    background-color: mediumaquamarine;
+    color: black;
+}
+
+#userFormWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: lightgray;
+    /* transform: translate(0, -50%);*/
+    border: 1px solid black; /*only for TEST*/
+    padding: 10px;
+}
+table {
+        position: absolute;
+        top: 20%;
+        left: 0%;
+}
