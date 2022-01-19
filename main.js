@@ -8,6 +8,7 @@ function setUpEventTable() {
     //creating Add btn to show/hide div
     let buttonEl = document.createElement('button');
     buttonEl.id = 'add_btn_dynamic_table';
+    //function showForm() is in function.js
     buttonEl.setAttribute('onclick', 'showForm()');
     buttonEl.innerText= "Add";
 
@@ -26,17 +27,6 @@ function setUpEventTable() {
     divEl_toggle_form.id = 'userFormWrapper';
     divEl_toggle_form.innerHTML = 'hi'  //todo --------------------------------------------- TEST
     document.getElementsByTagName('body')[0].append(divEl_toggle_form);
-
-    function showForm() {
-        let elem = document.getElementById('userFormWrapper');
-        if (elem.style.display === 'none') {
-            elem.style.display = 'block';
-        }
-        else {
-            elem.style.display = 'none';
-        }
-    }
-
 
     // dynamic table creation (table header & table body)
     const createTable = () => {
@@ -126,7 +116,7 @@ window.addEventListener('load', function () {
 // }
 // console.log(x= new table(1,'rolly', 'polly', 'Kletna 6'))
 //
-// //random date generator
+//
 // function setDateFormat(year, month, day) {
 //     const date = new Date();
 //     date.setFullYear(year);
