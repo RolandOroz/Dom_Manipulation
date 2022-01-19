@@ -1,13 +1,14 @@
 //sets the table
 function setUpEventTable() {
 
+
     //table head names
     let tableHeadersNamesArray = ['First Name', 'Last Name', 'Address', 'DOB', ' '];
 
-    //creating btn to append to body
+    //creating Add btn to show/hide div
     let buttonEl = document.createElement('button');
     buttonEl.id = 'add_btn_dynamic_table';
-    buttonEl.setAttribute('onclick', 'divEl_showForm()');
+    buttonEl.setAttribute('onclick', 'showForm()');
     buttonEl.innerText= "Add";
 
 
@@ -21,13 +22,22 @@ function setUpEventTable() {
     divEl.id = 'div_dynamic_table';
     document.getElementsByTagName('body')[0].append(divEl);
 
+    let divEl_toggle_form = document.createElement('div');
+    divEl_toggle_form.id = 'userFormWrapper';
+    divEl_toggle_form.innerHTML = 'hi'  //todo --------------------------------------------- TEST
+    document.getElementsByTagName('body')[0].append(divEl_toggle_form);
 
-    function divEl_showForm() {
-        divEl_show_form = document.createElement('div');
-
+    function showForm() {
+        let elem = document.getElementById('userFormWrapper');
+        if (elem.style.display === 'none') {
+            elem.style.display = 'block';
+        }
+        else {
+            elem.style.display = 'none';
+        }
     }
 
-    divEl_showForm.id = 'div_show_Form';
+
     // dynamic table creation (table header & table body)
     const createTable = () => {
 
@@ -61,15 +71,10 @@ function setUpEventTable() {
 
         //appends table to div
         divEl.append(tableEl);
-
-
     }
+
     createTable();
 //************************* end of dynamic table creation ************************
-    let divEl_show_form = document.createElement('div');
-    divEl_show_form.id = 'userFormWrapper';
-    divEl_show_form.innerHTML = 'hi'  //todo --------------------------------------------- TEST
-    document.getElementsByTagName('body')[0].append(divEl_show_form);
 }
 
 window.addEventListener('load', function () {
