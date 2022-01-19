@@ -1,48 +1,72 @@
+//sets the table
+function setUpEventTable() {
 
-let tableHeadersNamesArray =[];
+    //table head names
+    let tableHeadersNamesArray = ['First Name', 'Last Name', 'Address', 'DOB', ' '];
 
-function createTableHeaderNames(arr, typeAllNamesDividedByCommaAsString) {
-    let string;
-        string = typeAllNamesDividedByCommaAsString;
+    //creating btn to append to body
+    let buttonEl = document.createElement('button');
+    buttonEl.id = 'add_btn_dynamic_table';
+    buttonEl.innerText= "Add";
 
-    let xArr =string.split(',')
-    xArr.forEach((item) => {
-        arr.push(item);
-    })
+
+    let divEl_2 = document.createElement('div');
+    divEl_2.id = 'div_btn_add';
+    document.getElementsByTagName('body')[0].append(divEl_2);
+    divEl_2.append(buttonEl);
+
+    //creating div element to append the table
+    let divEl = document.createElement('div');
+    divEl.id = 'div_dynamic_table';
+    document.getElementsByTagName('body')[0].append(divEl);
+
+
+
+    // dynamic table creation (table header & table body)
+    const createTable = () => {
+
+        //creating table
+        let tableEl = document.createElement('table');
+        tableEl.className = 'table_dynamic';
+
+        //creates table header
+        let tableHeadEl = document.createElement('thead');
+        tableHeadEl.id = 'thead_dynamic';
+
+        //creates headers row
+        let tableRowEl = document.createElement('tr');
+        tableRowEl.className = 'tr_header_dynamic';
+
+        //iterates over all strings in the tableHeadersNamesArray
+        tableHeadersNamesArray.forEach(item => {
+            let tableHeader = document.createElement('th');
+            tableHeader.className = 'th_header_dynamic'
+            tableHeader.innerText = item;
+            tableRowEl.append(tableHeader);
+        })
+        //appends header row to table header
+        tableHeadEl.append(tableRowEl);
+        tableEl.append(tableHeadEl);
+
+        //creates table body
+        let tableBodyEl = document.createElement('tbody');
+        tableBodyEl.className = "tbody_dynamic";
+        tableEl.append(tableBodyEl);
+
+        //appends table to div
+        divEl.append(tableEl);
+    }
+    createTable();
+//************************* end of dynamic table creation ************************
+
+
+
+
 }
-createTableHeaderNames(tableHeadersNamesArray, "First Name,Last Name,Address,DOB, ");
 
-//creating div element
-let divEl = document.createElement('div');
-divEl.id = 'div_dynamic_table';
-document.getElementsByTagName('body')[0].append(divEl);
-
-// dynamic table creation
-const createTable = () => {
-
-    let tableEl = document.createElement('table');
-    tableEl.className = 'table_dynamic';
-
-    let tableHeadEl = document.createElement('thead');
-    tableHeadEl.id = 'thead_dynamic';
-
-    let tableRowEl = document.createElement('tr');
-    tableRowEl.className = 'tr_header_dynamic';
-
-    tableHeadersNamesArray.forEach(item => {
-         let tableHeader = document.createElement('th');
-         tableHeader.className = 'th_header_dynamic'
-         tableHeader.innerText = item;
-         tableRowEl.append(tableHeader);
-     })
-
-    tableHeadEl.append(tableRowEl);
-    tableEl.append(tableHeadEl);
-
-    divEl.append(tableEl);
-}
-createTable()
-
+window.addEventListener('load', function () {
+    setUpEventTable();
+})
 
 
 
