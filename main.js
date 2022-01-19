@@ -25,7 +25,7 @@ function setUpEventTable() {
 
     let divEl_toggle_form = document.createElement('div');
     divEl_toggle_form.id = 'userFormWrapper';
-    divEl_toggle_form.innerHTML = 'hi'  //todo --------------------------------------------- TEST
+    divEl_toggle_form.innerHTML = 'userFormWrapper'  //todo --------------------------------------------- TEST
     document.getElementsByTagName('body')[0].append(divEl_toggle_form);
 
     // dynamic table creation (table header & table body)
@@ -98,7 +98,7 @@ window.addEventListener('load', function () {
 // bodyEl.appendChild(divEl);
 // divEl.appendChild(tableEl);
 // tableEl.appendChild(thEl);
-// thEl.innerHTML='adsad'
+// thEl.innerHTML='hi'
 //
 
 

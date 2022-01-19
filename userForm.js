@@ -8,7 +8,6 @@ class userForm{
     }
 }
 
-
 function setDateFormat(year, month, day) {
     const date = new Date();
     date.setUTCFullYear(year);
