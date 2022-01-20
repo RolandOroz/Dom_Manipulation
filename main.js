@@ -61,14 +61,37 @@ function setUpEventTable() {
 
         //appends table to div
         divEl.append(tableEl);
+
+        function showForm() {
+            let elem = document.getElementById('userFormWrapper');
+            if (elem.style.display === 'none') {
+                elem.style.display = 'block';
+            }
+            else {
+                elem.style.display = 'none';
+            }
+        }
+
     }
 
     createTable();
 //************************* end of dynamic table creation ************************
 }
 
+//toggles div element between show and hide--used for Form toggle on btn Add
+function showForm() {
+    let elem = document.getElementById('userFormWrapper');
+    if (elem.style.display === 'none') {
+        elem.style.display = 'block';
+    }
+    else {
+        elem.style.display = 'none';
+    }
+}
+
 window.addEventListener('load', function () {
     setUpEventTable();
+    showForm();
 })
 
 
