@@ -23,9 +23,10 @@ function setUpEventTable() {
     divEl.id = 'div_dynamic_table';
     document.getElementsByTagName('body')[0].append(divEl);
 
+    //creating div element to append the Form with toggle function
     let divEl_toggle_form = document.createElement('div');
     divEl_toggle_form.id = 'userFormWrapper';
-    divEl_toggle_form.innerHTML = 'Append Form Here'  //todo --------------------------------------------- TEST
+    divEl_toggle_form.innerHTML = 'User Input'  //todo --------------------------------------------- TEST
     document.getElementsByTagName('body')[0].append(divEl_toggle_form);
 
     // dynamic table creation (table header & table body)
@@ -62,16 +63,6 @@ function setUpEventTable() {
         //appends table to div
         divEl.append(tableEl);
 
-        function showForm() {
-            let elem = document.getElementById('userFormWrapper');
-            if (elem.style.display === 'none') {
-                elem.style.display = 'block';
-            }
-            else {
-                elem.style.display = 'none';
-            }
-        }
-
     }
 
     createTable();
@@ -92,6 +83,7 @@ function showForm() {
 window.addEventListener('load', function () {
     setUpEventTable();
     showForm();
+
 })
 
 
