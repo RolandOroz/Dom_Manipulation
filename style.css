@@ -21,6 +21,17 @@ th:hover {
     font-weight: bold;
 }
 
+#edit_btn {
+    /*display: none;*/
+    background-color: cornflowerblue;
+    color: whitesmoke;
+}
+
+#edit_btn:hover {
+    display: block;
+    border-radius: 5px;
+}
+
 #add_btn_dynamic_table {
     position: absolute;
     top: 5%;
@@ -35,7 +46,7 @@ th:hover {
 #add_btn_dynamic_table:hover {
     background: darkseagreen;
     animation: shadowMove 1s;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 #userFormWrapper {
@@ -65,7 +76,7 @@ table {
 }
 .input_form_dynamic:hover {
     animation: shadowMove 1s;
-    border-radius: 10px;
+    border-radius: 5px;
     width: 100%;
 }
 
@@ -86,7 +97,7 @@ table {
 .add_btn_form:hover{
     background: darkseagreen ;
     animation: shadowMove 1s;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .close_btn_form {
@@ -106,7 +117,7 @@ table {
 .close_btn_form:hover {
     background: crimson;
     animation: shadowMove 1s;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 @keyframes shadowMove {
     10% {box-shadow: 8px 10px 20px #888888;}

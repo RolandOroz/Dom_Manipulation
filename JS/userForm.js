@@ -99,16 +99,19 @@ function setUpEventForm() {
                 let td_2 = document.createElement('td');
                 let td_3 = document.createElement('td');
                 let td_4 = document.createElement('td');
+                let td_5 = document.createElement('td');
 
                 td_1.innerText = document.querySelector('#input_form_dynamic_firstName').value;
                 td_2.innerHTML = document.querySelector('#input_form_dynamic_lastName').value;
                 td_3.innerHTML = document.querySelector('#input_form_dynamic_address').value;
                 td_4.innerHTML = document.querySelector('#input_form_dynamic_dob').value;
+                td_5.innerHTML = '<button id="edit_btn">Edit</button>';
 
                 tr.appendChild(td_1);
                 tr.appendChild(td_2);
                 tr.appendChild(td_3);
                 tr.appendChild(td_4);
+                tr.appendChild(td_5);
 
                 table.appendChild(tr);
                 formEl.reset();
