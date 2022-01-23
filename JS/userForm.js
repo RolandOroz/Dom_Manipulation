@@ -122,30 +122,6 @@ function setUpEventForm() {
     createForm();
 }
 
-
-// function addInputToTable() {
-//     let table = document.querySelector('#tbody')
-//
-//     let firstname = document.querySelector('#input_form_dynamic_firstName').value;
-//     let tr = document.createElement('tr');
-//     let td_1 = document.createElement('td');
-//     let td_2 = document.createElement('td');
-//     let td_3 = document.createElement('td');
-//     let td_4 = document.createElement('td');
-//
-//     td_1.innerText = document.querySelector('#input_form_dynamic_firstName').input.value;
-//     td_2.innerHTML = document.querySelector('#input_form_dynamic_lastName').value;
-//     td_3.innerHTML = document.querySelector('#input_form_dynamic_address').value;
-//     td_4.innerHTML = document.querySelector('#input_form_dynamic_dob').value;
-//
-//     tr.appendChild(td_1);
-//     tr.appendChild(td_2);
-//     tr.appendChild(td_3);
-//     tr.appendChild(td_4);
-//
-//     table.appendChild(tr);
-// }
-
 function setDateFormat(year, month, day) {
     const date = new Date();
     date.setUTCFullYear(year);
