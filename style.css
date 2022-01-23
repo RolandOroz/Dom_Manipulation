@@ -17,6 +17,11 @@
     color: black;
 }
 
+#add_btn_dynamic_table:hover {
+    background: darkseagreen;
+    animation: shadowMove 1s;
+}
+
 #userFormWrapper {
     display: grid;
     text-align: center;
@@ -29,14 +34,59 @@
     padding: 20px;
 }
 table {
-    display: flex;
+    float: left;
         position: absolute;
         top: 20%;
-        left: 50%;
+        left: 5%;
 }
 
 .input_form_dynamic {
     display: flex;
     padding: 5px;
     margin: 10px;
+}
+.input_form_dynamic:hover {
+    animation: shadowMove 1s;
+}
+
+
+.add_btn_form {
+    position: absolute;
+    font-size: x-small;
+    top: 75%;
+    left: 5%;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    margin: 20px;
+    border: 3px solid darkseagreen;
+    background-color: mediumaquamarine;
+    color: black;
+}
+
+.add_btn_form:hover{
+    background: darkseagreen ;
+    animation: shadowMove 1s;
+}
+
+.close_btn_form {
+    position: absolute;
+    font-size: x-small;
+    top: 75%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    margin: 20px;
+    border: 3px solid crimson;
+    background-color: red;
+    color: whitesmoke;
+}
+
+.close_btn_form:hover {
+    background: crimson;
+    animation: shadowMove 1s;
+}
+@keyframes shadowMove {
+    10% {box-shadow: 8px 10px 20px #888888;}
 }

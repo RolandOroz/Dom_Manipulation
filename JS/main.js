@@ -29,6 +29,7 @@ function setUpEventTable() {
     divEl_toggle_form.innerHTML = 'User Input'  //todo --------------------------------------------- TEST
     document.getElementsByTagName('body')[0].append(divEl_toggle_form);
 
+
     // dynamic table creation (table header & table body)
     const createTable = () => {
 
@@ -58,6 +59,7 @@ function setUpEventTable() {
         //creates table body
         let tableBodyEl = document.createElement('tbody');
         tableBodyEl.className = "tbody_dynamic";
+        tableBodyEl.id = "tbody";
         tableEl.append(tableBodyEl);
 
         //appends table to div
