@@ -81,7 +81,7 @@ function setUpEventForm() {
             let address_Input = document.querySelector('#input_form_dynamic_address');
             let dob_Input = document.querySelector('#input_form_dynamic_dob');
             // alert(fName_input + "\n"+ lName_input+  "\n"+address_Input+ "\n"+dob_Input)
-            if (fName_input.value === '' || lName_input.value === '' || address_Input.value === '' || dob_Input.value === '') {
+            if (fName_input.value === '' || lName_input.value === '' || address_Input.value === '' || dob_Input.value === '' ) {
 
                 fName_input.style.border = '1px solid red';
                 lName_input.style.border = '1px solid red';
@@ -93,7 +93,6 @@ function setUpEventForm() {
                 address_Input.placeholder = 'Required Field';
                 dob_Input.placeholder = 'Required Field';
             } else {
-
                 let table = document.querySelector('#tbody')
                 let tr = document.createElement('tr');
                 let td_1 = document.createElement('td');

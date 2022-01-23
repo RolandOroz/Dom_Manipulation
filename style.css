@@ -1,17 +1,19 @@
-.th_header_dynamic {
-    border: 1px solid black;
-    color: blue;
-    font-weight: bold;
-    padding: 5px;
-    border-collapse: collapse;
-}
 
-#tbody, table {
+
+#tbody, table, th ,td {
     text-align: left;
     border: 1px solid black;
     color: black;
     padding: 5px;
     margin: 5px;
+    border-collapse: collapse;
+}
+
+.th_header_dynamic {
+
+    color: blue;
+    font-weight: bold;
+
 }
 
 #add_btn_dynamic_table {
