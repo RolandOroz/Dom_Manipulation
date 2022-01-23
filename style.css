@@ -8,12 +8,17 @@
     margin: 5px;
     border-collapse: collapse;
 }
+tr:hover {
+    background: #ECE9E9FF;
+}
+
+th:hover {
+    background: #BEBCBCFF;
+}
 
 .th_header_dynamic {
-
     color: blue;
     font-weight: bold;
-
 }
 
 #add_btn_dynamic_table {
