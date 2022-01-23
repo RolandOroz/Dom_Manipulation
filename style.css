@@ -1,9 +1,17 @@
-.table_dynamic, .th_header_dynamic {
+.th_header_dynamic {
     border: 1px solid black;
     color: blue;
     font-weight: bold;
     padding: 5px;
     border-collapse: collapse;
+}
+
+#tbody, table {
+    text-align: left;
+    border: 1px solid black;
+    color: black;
+    padding: 5px;
+    margin: 5px;
 }
 
 #add_btn_dynamic_table {
@@ -20,6 +28,7 @@
 #add_btn_dynamic_table:hover {
     background: darkseagreen;
     animation: shadowMove 1s;
+    border-radius: 10px;
 }
 
 #userFormWrapper {
@@ -41,14 +50,17 @@ table {
 }
 
 .input_form_dynamic {
-    display: flex;
-    padding: 5px;
+    display: block;
+    flex-direction: column;
+    padding: 10px;
     margin: 10px;
+    width: 70%;
 }
 .input_form_dynamic:hover {
     animation: shadowMove 1s;
+    border-radius: 10px;
+    width: 100%;
 }
-
 
 .add_btn_form {
     position: absolute;
@@ -67,6 +79,7 @@ table {
 .add_btn_form:hover{
     background: darkseagreen ;
     animation: shadowMove 1s;
+    border-radius: 10px;
 }
 
 .close_btn_form {
@@ -86,6 +99,7 @@ table {
 .close_btn_form:hover {
     background: crimson;
     animation: shadowMove 1s;
+    border-radius: 10px;
 }
 @keyframes shadowMove {
     10% {box-shadow: 8px 10px 20px #888888;}

@@ -60,7 +60,7 @@ function setUpEventForm() {
         divClose.addEventListener('click', e => {
             let remDiv = document.querySelector('#userFormWrapper');
             remDiv.setAttribute('style', 'display: none');
-            document.querySelector('#user_form').reset();
+            //document.querySelector('#user_form').reset();
         })
 
 
@@ -68,25 +68,59 @@ function setUpEventForm() {
 
         let addInput = document.querySelector('#add_user_form');
         addInput.addEventListener('click', e => {
-            let fName_input = document.querySelector('#input_form_dynamic_firstName').value;
-            let lName_input = document.querySelector('#input_form_dynamic_lastName').value;
-            let address_Input = document.querySelector('#input_form_dynamic_address').value;
-            let dob_Input = document.querySelector('#input_form_dynamic_dob').value;
+            e.preventDefault();
+
+            validateInputs();
+        })
+
+
+        const validateInputs = () => {
+
+            let fName_input = document.querySelector('#input_form_dynamic_firstName');
+            let lName_input = document.querySelector('#input_form_dynamic_lastName');
+            let address_Input = document.querySelector('#input_form_dynamic_address');
+            let dob_Input = document.querySelector('#input_form_dynamic_dob');
             // alert(fName_input + "\n"+ lName_input+  "\n"+address_Input+ "\n"+dob_Input)
-            if(fName_input === '') {
-                let changeBorderColor = document.querySelector('#input_form_dynamic_firstName');
-                changeBorderColor.style.border = '1px solid red';
-                document.querySelector('#input_form_dynamic_firstName')
+            if (fName_input.value === '' || lName_input.value === '' || address_Input.value === '' || dob_Input.value === '') {
+
+                fName_input.style.border = '1px solid red';
+                lName_input.style.border = '1px solid red';
+                address_Input.style.border = '1px solid red';
+                dob_Input.style.border = '1px solid red';
+
+                fName_input.placeholder = 'Required Field';
+                lName_input.placeholder = 'Required Field';
+                address_Input.placeholder = 'Required Field';
+                dob_Input.placeholder = 'Required Field';
+            } else {
+
+                let table = document.querySelector('#tbody')
+                let tr = document.createElement('tr');
+                let td_1 = document.createElement('td');
+                let td_2 = document.createElement('td');
+                let td_3 = document.createElement('td');
+                let td_4 = document.createElement('td');
+
+                td_1.innerText = document.querySelector('#input_form_dynamic_firstName').value;
+                td_2.innerHTML = document.querySelector('#input_form_dynamic_lastName').value;
+                td_3.innerHTML = document.querySelector('#input_form_dynamic_address').value;
+                td_4.innerHTML = document.querySelector('#input_form_dynamic_dob').value;
+
+                tr.appendChild(td_1);
+                tr.appendChild(td_2);
+                tr.appendChild(td_3);
+                tr.appendChild(td_4);
+
+                table.appendChild(tr);
+                formEl.reset();
 
             }
+        }
 
-
-        })
 
     }
     createForm();
 }
-
 
 
 // function addInputToTable() {
@@ -126,6 +160,7 @@ function onCh(val) {
     let x = document.querySelector('#input_form_dynamic_firstName');
     alert(val.value)
 }
+
 window.addEventListener('load', function () {
     setUpEventForm();
 })
