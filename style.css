@@ -12,7 +12,7 @@ tr:hover {
     background: #ECE9E9FF;
 }
 
-th:hover {
+th:hover, td:hover {
     background: #BEBCBCFF;
 }
 
@@ -83,7 +83,7 @@ table {
 .add_btn_form {
     position: absolute;
     font-size: x-small;
-    top: 75%;
+    top: 85%;
     left: 5%;
     width: 40px;
     height: 40px;
@@ -103,7 +103,7 @@ table {
 .close_btn_form {
     position: absolute;
     font-size: x-small;
-    top: 75%;
+    top: 85%;
     left: 50%;
     width: 40px;
     height: 40px;

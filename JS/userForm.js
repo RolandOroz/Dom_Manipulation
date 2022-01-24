@@ -37,7 +37,7 @@ function setUpEventForm() {
         dobEl.placeholder = 'DOB';
         dobEl.className = 'input_form_dynamic';
         dobEl.id = 'input_form_dynamic_dob';
-        dobEl.setAttribute('type', 'text');
+        dobEl.setAttribute('type', 'date');
         dobEl.setAttribute('name', 'dob');
         formEl.append(dobEl);
 
@@ -51,27 +51,29 @@ function setUpEventForm() {
         btnAddInputEl.className = 'add_btn_form';
         btnAddInputEl.id = 'add_user_form';
         btnAddInputEl.innerText = 'Add';
-        //btnCloseInputEl.setAttribute('onclick', 'addUser');
+
 
         formEl.append(btnAddInputEl);
 
         //event that closes the form display
         const divClose = document.querySelector('#closes_btn_form');
         divClose.addEventListener('click', e => {
+            e.preventDefault();
             let remDiv = document.querySelector('#userFormWrapper');
             remDiv.setAttribute('style', 'display: none');
             //document.querySelector('#user_form').reset();
         })
 
-
-        let inputArr;
-
         let addInput = document.querySelector('#add_user_form');
         addInput.addEventListener('click', e => {
+
             e.preventDefault();
 
             validateInputs();
         })
+
+
+        let inputArr = [];
 
 
         const validateInputs = () => {
@@ -81,7 +83,7 @@ function setUpEventForm() {
             let address_Input = document.querySelector('#input_form_dynamic_address');
             let dob_Input = document.querySelector('#input_form_dynamic_dob');
             // alert(fName_input + "\n"+ lName_input+  "\n"+address_Input+ "\n"+dob_Input)
-            if (fName_input.value === '' || lName_input.value === '' || address_Input.value === '' || dob_Input.value === '' ) {
+            if (!fName_input || fName_input.value === '' || lName_input.value === '' || address_Input.value === '' || dob_Input.value === '' ) {
 
                 fName_input.style.border = '1px solid red';
                 lName_input.style.border = '1px solid red';
@@ -101,19 +103,33 @@ function setUpEventForm() {
                 let td_4 = document.createElement('td');
                 let td_5 = document.createElement('td');
 
-                td_1.innerText = document.querySelector('#input_form_dynamic_firstName').value;
-                td_2.innerHTML = document.querySelector('#input_form_dynamic_lastName').value;
-                td_3.innerHTML = document.querySelector('#input_form_dynamic_address').value;
-                td_4.innerHTML = document.querySelector('#input_form_dynamic_dob').value;
+                let userInput = {
+                    firstName: document.querySelector('#input_form_dynamic_firstName').value,
+                    lastName: document.querySelector('#input_form_dynamic_lastName').value,
+                    address: document.querySelector('#input_form_dynamic_address').value,
+                    dob: document.querySelector('#input_form_dynamic_dob').value
+                }
+                inputArr.push(userInput);
+
+                td_1.innerHTML = userInput['firstName'];
+                td_2.innerHTML = userInput['lastName'];
+                td_3.innerHTML = userInput['address'];
+                td_4.innerHTML = userInput['dob'];
                 td_5.innerHTML = '<button class="edit_btn">Edit</button>';
+
+
 
                 tr.appendChild(td_1);
                 tr.appendChild(td_2);
                 tr.appendChild(td_3);
                 tr.appendChild(td_4);
                 tr.appendChild(td_5);
-
                 table.appendChild(tr);
+
+
+
+
+
                 formEl.reset();
 
             }
@@ -123,6 +139,7 @@ function setUpEventForm() {
     }
     createForm();
 }
+
 
 function setDateFormat(year, month, day) {
     const date = new Date();

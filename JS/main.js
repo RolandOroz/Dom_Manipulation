@@ -3,7 +3,7 @@ function setUpEventTable() {
 
 
     //table head names
-    let tableHeadersNamesArray = ['First Name', 'Last Name', 'Address', 'DOB', ' '];
+    let tableHeadersNamesArray = ['First Name', 'Last Name', 'Address', 'DOB'];
 
     //creating Add btn to show/hide div
     let buttonEl = document.createElement('button');
@@ -36,6 +36,7 @@ function setUpEventTable() {
         //creating table
         let tableEl = document.createElement('table');
         tableEl.className = 'table_dynamic';
+        tableEl.id = 'table_dynamic';
 
         //creates table header
         let tableHeadEl = document.createElement('thead');
@@ -73,19 +74,20 @@ function setUpEventTable() {
 
 //toggles div element between show and hide--used for Form toggle on btn Add
 function showForm() {
+    //e.preventDefault();
     let elem = document.getElementById('userFormWrapper');
-    if (elem.style.display === 'none') {
+    if (elem.style.display === 'none') //{
         elem.style.display = 'block';
-    }
-    else {
-        elem.style.display = 'none';
-    }
+    // }
+    // else {
+    //     elem.style.display = 'none';
+    // }
 }
+
 
 window.addEventListener('load', function () {
     setUpEventTable();
     showForm();
-
 })
 
 
