@@ -73,6 +73,7 @@ function setUpEventTable() {
 }
 
 //toggles div element between show and hide--used for Form toggle on btn Add
+//TODO check!!!
 function showForm() {
     //e.preventDefault();
     let elem = document.getElementById('userFormWrapper');
