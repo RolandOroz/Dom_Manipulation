@@ -105,7 +105,7 @@ function setUpEventForm() {
                 td_2.innerHTML = document.querySelector('#input_form_dynamic_lastName').value;
                 td_3.innerHTML = document.querySelector('#input_form_dynamic_address').value;
                 td_4.innerHTML = document.querySelector('#input_form_dynamic_dob').value;
-                td_5.innerHTML = '<button id="edit_btn">Edit</button>';
+                td_5.innerHTML = '<button class="edit_btn">Edit</button>';
 
                 tr.appendChild(td_1);
                 tr.appendChild(td_2);

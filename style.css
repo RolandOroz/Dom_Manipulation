@@ -21,13 +21,13 @@ th:hover {
     font-weight: bold;
 }
 
-#edit_btn {
+.edit_btn {
     /*display: none;*/
     background-color: cornflowerblue;
     color: whitesmoke;
 }
 
-#edit_btn:hover {
+.edit_btn:hover {
     display: block;
     border-radius: 5px;
 }
