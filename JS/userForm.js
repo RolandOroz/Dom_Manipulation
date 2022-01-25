@@ -48,6 +48,7 @@ function setUpEventForm() {
         btnCloseInputEl.innerText = 'Close';
         formEl.append(btnCloseInputEl);
 
+        //adds form
         let btnAddInputEl = document.createElement('button');
         btnAddInputEl.className = 'add_btn_form';
         btnAddInputEl.id = 'add_user_form';
@@ -56,13 +57,14 @@ function setUpEventForm() {
 
         formEl.append(btnAddInputEl);
 
+
         //event that closes the form display
         const divClose = document.querySelector('#closes_btn_form');
         divClose.addEventListener('click', e => {
             e.preventDefault();
             let remDiv = document.querySelector('#userFormWrapper');
+            document.querySelector('#user_form').reset();
             remDiv.setAttribute('style', 'display: none');
-            //document.querySelector('#user_form').reset();
         })
 
         let addInput = document.querySelector('#add_user_form');
@@ -72,9 +74,6 @@ function setUpEventForm() {
 
             validateInputs();
         })
-
-        let editInput = document.querySelector('#add_user_form')  //todo edit form
-
 
 
 
@@ -136,19 +135,18 @@ function setUpEventForm() {
                 tr.appendChild(td_5);
                 table.appendChild(tr);
 
+                let edit_btn_table = document.querySelector('.edit_btn')
+                edit_btn_table.addEventListener('click', e => {
+                    displaySelectedRow();
+                })
 
-
-
-
-                formEl.reset();
-
+                document.querySelector('#user_form').reset();
             }
         }
-
-
     }
     createForm();
 }
+
 
 
 function setDateFormat(year, month, day) {

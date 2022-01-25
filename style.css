@@ -99,6 +99,30 @@ table {
     animation: shadowMove 1s;
     border-radius: 5px;
 }
+/* todo ************  change style for change button ********* */
+
+.change_btn_form {
+    position: absolute;
+    font-size: x-small;
+    top: 85%;
+    left: 5%;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    margin: 20px;
+    border: 3px solid darkseagreen;
+    background-color: blue;
+    color: white;
+}
+
+.change_btn_form:hover{
+    background: darkseagreen ;
+    animation: shadowMove 1s;
+    border-radius: 5px;
+}
+
+/*TODO ************************* */
+
 
 .close_btn_form {
     position: absolute;

@@ -72,8 +72,28 @@ function setUpEventTable() {
 //************************* end of dynamic table creation ************************
 }
 
+function displaySelectedRow() {
+    let table = document.querySelector('#table_dynamic'),rIndex;
+    let changeAddBtn = document.querySelector('#add_user_form')
+
+    for(let i = 0; i < table.rows.length; i++) {
+        table.rows[i].onclick = function () {
+            rIndex = this.rowIndex;
+
+            document.querySelector('#input_form_dynamic_firstName').value = this.cells[0].innerHTML;
+            document.querySelector('#input_form_dynamic_lastName').value = this.cells[1].innerHTML;
+            document.querySelector('#input_form_dynamic_address').value = this.cells[2].innerHTML;
+            document.querySelector('#input_form_dynamic_dob').value = this.cells[3].innerHTML;
+
+
+            changeAddBtn.className= 'change_btn_form';
+        };
+    }
+}
+
+//TODO make sort function asc/ desc order *******************************************  !!!!!!!!!!!!
+
 //toggles div element between show and hide--used for Form toggle on btn Add
-//TODO check!!!
 function showForm() {
 
     let elem = document.getElementById('userFormWrapper');
@@ -97,6 +117,7 @@ function showForm() {
     //     elem.style.display = 'none';
     // }
 }
+
 
 
 window.addEventListener('load', function () {
