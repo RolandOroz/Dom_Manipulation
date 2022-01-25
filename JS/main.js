@@ -75,11 +75,24 @@ function setUpEventTable() {
 //toggles div element between show and hide--used for Form toggle on btn Add
 //TODO check!!!
 function showForm() {
-    //e.preventDefault();
+
     let elem = document.getElementById('userFormWrapper');
-    if (elem.style.display === 'none') //{
+    if (elem.style.display === 'none')
         elem.style.display = 'block';
-    // }
+
+        document.addEventListener('keypress', function (e) {
+            //prevents enter key to submit
+            if (e.keyCode === 13 || e.which === 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        document.addEventListener('click', function (e) {
+            document.querySelector('#user_form').reset();
+        });
+
+
     // else {
     //     elem.style.display = 'none';
     // }

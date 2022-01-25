@@ -50,7 +50,7 @@ th:hover, td:hover {
 }
 
 #userFormWrapper {
-    display: grid;
+    display: block;
     text-align: center;
     position: absolute;
     top: 40%;
