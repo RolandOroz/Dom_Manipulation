@@ -1,3 +1,4 @@
+let inputArr = [];
 function setUpEventForm() {
 
     const createForm = () => {
@@ -72,8 +73,9 @@ function setUpEventForm() {
             validateInputs();
         })
 
+        let editInput = document.querySelector('#add_user_form')  //todo edit form
 
-        let inputArr = [];
+
 
 
         const validateInputs = () => {
@@ -96,12 +98,20 @@ function setUpEventForm() {
                 dob_Input.placeholder = 'Required Field';
             } else {
                 let table = document.querySelector('#tbody')
+
+                let table_length = (table.rows.length)-1;
+
+
                 let tr = document.createElement('tr');
+
                 let td_1 = document.createElement('td');
                 let td_2 = document.createElement('td');
                 let td_3 = document.createElement('td');
                 let td_4 = document.createElement('td');
                 let td_5 = document.createElement('td');
+
+
+                let test = document.querySelector('#showP');
 
                 let userInput = {
                     firstName: document.querySelector('#input_form_dynamic_firstName').value,
@@ -117,7 +127,7 @@ function setUpEventForm() {
                 td_4.innerHTML = userInput['dob'];
                 td_5.innerHTML = '<button class="edit_btn">Edit</button>';
 
-
+               test.innerHTML = inputArr[0];
 
                 tr.appendChild(td_1);
                 tr.appendChild(td_2);

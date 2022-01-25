@@ -88,9 +88,9 @@ function showForm() {
             }
         });
 
-        document.addEventListener('click', function (e) {
-            document.querySelector('#user_form').reset();
-        });
+        // document.addEventListener('click', function (e) {
+        //     document.querySelector('#user_form').reset();
+        // });
 
 
     // else {
