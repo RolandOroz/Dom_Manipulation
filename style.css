@@ -22,13 +22,13 @@ th:hover, td:hover {
 }
 
 .edit_btn {
-    /*display: none;*/
+    margin: 5px;
     background-color: cornflowerblue;
     color: whitesmoke;
 }
 
 .edit_btn:hover {
-    display: block;
+    margin: 5px;
     border-radius: 5px;
 }
 
