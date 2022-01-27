@@ -1,4 +1,4 @@
-let inputArr = [];
+
 function setUpEventForm() {
 
     const createForm = () => {

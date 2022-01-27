@@ -1,3 +1,30 @@
+let inputArr = [
+    {
+        firstName: 'Roland',
+        lastName: 'Oroz',
+        address: 'Kovaciceva ulica 1B',
+        dob: '1977-09-13',
+    },
+    {
+        firstName: 'Marjan',
+        lastName: 'Kozlevcar',
+        address: 'Sterletova ulica 132',
+        dob: '1965-04-130'
+    },
+    {
+        firstName: 'Hugo',
+        lastName: 'Claire',
+        address: 'Pot na Vrh 8',
+        dob: '1977-09-13'
+    },
+    {
+        firstName: 'Natan',
+        lastName: 'Oroz',
+        address: 'Schwannenstrasse 22',
+        dob: '2010-10-10'
+    }
+];
+
 //sets the table
 function setUpEventTable() {
 
@@ -65,6 +92,23 @@ function setUpEventTable() {
 
         //appends table to div
         divEl.append(tableEl);
+//todo ---------------------------------------------------------------------------------------------------
+        inputArr.forEach(user => {
+            let row = document.createElement('tr');
+            let btn = document.createElement('button');
+            btn.innerText = 'Edit';
+            btn.setAttribute('class', 'edit_btn');
+
+            Object.values(user).forEach(text => {
+                let cell = document.createElement('td');
+                let textNode = document.createTextNode(text);
+
+                cell.appendChild(textNode);
+                row.appendChild(cell);
+                row.appendChild(btn);
+            })
+            tableBodyEl.appendChild(row);
+        });
 
     }
 
