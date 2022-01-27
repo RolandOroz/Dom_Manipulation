@@ -168,17 +168,17 @@ function showForm() {
     if (elem.style.display === 'none')
         elem.style.display = 'block';
 
-        document.addEventListener('keypress', function (e) {
-            //prevents enter key to submit
-            if (e.keyCode === 13 || e.which === 13) {
-                e.preventDefault();
-                return false;
-            }
-        });
+    document.addEventListener('keypress', function (e) {
+        //prevents enter key to submit
+        if (e.keyCode === 13 || e.which === 13) {
+            e.preventDefault();
+            return false;
+        }
+    });
 
-        // document.addEventListener('click', function (e) {
-        //     document.querySelector('#user_form').reset();
-        // });
+    // document.addEventListener('click', function (e) {
+    //     document.querySelector('#user_form').reset();
+    // });
 
 
     // else {
