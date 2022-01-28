@@ -9,6 +9,7 @@
     border-collapse: collapse;
 }
 tr:hover {
+    cursor: pointer;
     background: #ECE9E9FF;
 }
 
